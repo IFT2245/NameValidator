@@ -1,6 +1,17 @@
+#!/bin/python3
+
+VERSION = 1.0
 import argparse
 import os
+import requests as rq
 import re
+
+
+def is_up_to_date():
+    with rq.get("https://raw.githubusercontent.com/SamuelYvon/NameValidator/master/validate.py") as version_check_req:
+        raw = version_check_req.text
+        version = re.match(r"VERSION = (\d+.\d+)", raw)
+        i = 5
 
 
 def extract_students(file: str):
