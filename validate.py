@@ -1,10 +1,11 @@
 #!/bin/python3
 
-VERSION = 1.1
 import argparse
 import os
 import requests as rq
 import re
+
+VERSION = 1.1
 
 
 def is_up_to_date():
