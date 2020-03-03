@@ -12,8 +12,17 @@ Par la suite:
 > wget https://github.com/SamuelYvon/NameValidator/blob/master/validate.py # télécharge le script
 > chmod u+x # donne les permissions d'exécution au script
 > ./validate.py [votre fichier .c] # valide le fichier c
-
+...
 ```
+
+Si vous ne voulez pas donner les permissions au script, vous pouvez aussi faire:
+
+```shell script
+> python3 ./validate.py [votre fichier .c]
+```
+
+Si le script vous ddit que la version n'est pas à jour, vous devez télécharger la dernière version de celui-ci, sans quoi
+vous ne pouvez pas valider des fichiers.
 
 ## Problèmes
 
