@@ -1,6 +1,6 @@
 #!/bin/python3
 
-VERSION = 1.0
+VERSION = 1.1
 import argparse
 import os
 import requests as rq
@@ -8,10 +8,18 @@ import re
 
 
 def is_up_to_date():
+    """
+    Check if the script is up to date
+    :return: if the script is... up to date!
+    """
     with rq.get("https://raw.githubusercontent.com/SamuelYvon/NameValidator/master/validate.py") as version_check_req:
         raw = version_check_req.text
-        version = re.match(r"VERSION = (\d+.\d+)", raw)
-        i = 5
+        version = re.search(r"VERSION = (\d+.\d+)", raw, flags=re.M)
+        if version is None:
+            print("Erreur en exécutant le script! Veuillez ouvrir un bug sur github!")
+        else:
+            online_version = float(version[1])
+            return online_version == VERSION
 
 
 def extract_students(file: str):
@@ -50,6 +58,11 @@ def extract_students(file: str):
 
 
 if __name__ == '__main__':
+
+    if not is_up_to_date():
+        print("Le script n'est pas à jour. Veuillez le mettre à jour avec la dernière version en ligne.")
+        exit(1)
+
     parser = argparse.ArgumentParser(description='Valide les noms d''étudiants dans un fichier c.')
     parser.add_argument('path', metavar='p', type=str, nargs=1,
                         help='Le chemin du fichier')
