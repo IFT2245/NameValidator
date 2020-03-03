@@ -49,7 +49,7 @@ def extract_students(file: str):
 
         code = re.sub(r"\*+", "*", code)
 
-        name_and_id_regex = r"(\S*) (\S*) ([0-9]{6,8})"
+        name_and_id_regex = r"(\S*) (\S* ){1,}([0-9]{6,8})"
 
         matches = re.findall(
             name_and_id_regex,
