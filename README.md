@@ -27,3 +27,7 @@ vous ne pouvez pas valider des fichiers.
 ## Problèmes
 
 Si vous avez un problème avec votre fichier (par exemple, votre nom ne semble pas validé), vous pouvez ouvrir un issue et nous essayerons de le régler.
+
+## Format de version
+
+`majeur`.`mineur`
