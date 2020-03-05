@@ -80,7 +80,7 @@ class TestCorrect(unittest.TestCase):
         # *author
         # çÇaa
         # 33331111
-        names = extract_students("./tests/accents_name_correct.c")
+        names = extract_students("./tests/accents_names_correct.c")
 
         self.assertEqual(len(names), 2)
 
