@@ -5,7 +5,7 @@ import os
 import requests as rq
 import re
 
-VERSION = 1.1
+VERSION = 1.2
 
 
 def is_up_to_date():

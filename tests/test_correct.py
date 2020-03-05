@@ -44,6 +44,39 @@ class TestCorrect(unittest.TestCase):
         self.assertEqual(name_two[1], "two")
         self.assertEqual(name_two[2], "33331111")
 
+    def test_long_names(self):
+        # *author
+        # one
+        # uno
+        # dos
+        # tres
+        # 11112222
+        # *author
+        # two
+        # quatro
+        # cinco
+        # seis
+        # 33331111
+        names = extract_students("./tests/long_names_correct.c")
+
+        self.assertEqual(len(names), 2)
+
+        name_one = names[0]
+        name_two = names[1]
+
+        self.assertEqual(name_one[0], "author")
+        self.assertEqual(name_one[1], "one")
+        self.assertEqual(name_one[2], "uno")
+        self.assertEqual(name_one[3], "dos")
+        self.assertEqual(name_one[4], "tres")
+        self.assertEqual(name_one[5], "11112222")
+
+        self.assertEqual(name_two[0], "author")
+        self.assertEqual(name_two[1], "two")
+        self.assertEqual(name_two[2], "quatro")
+        self.assertEqual(name_two[3], "cinco")
+        self.assertEqual(name_two[3], "seis")
+        self.assertEqual(name_two[4], "33331111")
 
 
 if __name__ == '__main__':
