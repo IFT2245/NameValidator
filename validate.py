@@ -51,13 +51,18 @@ def extract_students(file: str):
 
         code = re.sub(r"\*+", "*", code)
 
-        name_and_id_regex = r"([A-Za-z]+) ([A-Za-z]+) {1,}([0-9]{6,8})"
+        name_and_id_regex = r"([A-Za-zÀ-ÿ]+) ([A-Za-zÀ-ÿ]+\ ){1,}([0-9]{6,8})"
 
         matches = re.findall(
             name_and_id_regex,
             code)
 
-        return matches
+        # Trim spaces
+        names = []
+        for match in matches:
+            names.append(tuple((str(part).lstrip().rstrip() for part in match)))
+
+        return names
 
 
 if __name__ == '__main__':
