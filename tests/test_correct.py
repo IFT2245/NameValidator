@@ -73,6 +73,28 @@ class TestCorrect(unittest.TestCase):
         self.assertEqual(name_two[1], "seis")
         self.assertEqual(name_two[2], "33331111")
 
+    def test_accents(self):
+        # *author
+        # ÉéÀà
+        # 11112222
+        # *author
+        # çÇaa
+        # 33331111
+        names = extract_students("./tests/accents_name_correct.c")
+
+        self.assertEqual(len(names), 2)
+
+        name_one = names[0]
+        name_two = names[1]
+
+        self.assertEqual(name_one[0], "author")
+        self.assertEqual(name_one[1], "ÉéÀà")
+        self.assertEqual(name_one[2], "11112222")
+
+        self.assertEqual(name_two[0], "author")
+        self.assertEqual(name_two[1], "çÇaa")
+        self.assertEqual(name_two[2], "33331111")
+
 
 if __name__ == '__main__':
     unittest.main()
