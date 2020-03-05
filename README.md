@@ -15,6 +15,12 @@ Par la suite:
 ...
 ```
 
+Si votre installation ne contient pas la librairie `requests`:
+```shell script
+> wget https://github.com/SamuelYvon/NameValidator/blob/master/requirements.txt # télécharge le script
+> pip3 install -r requirements.txt
+```
+
 Si vous ne voulez pas donner les permissions au script, vous pouvez aussi faire:
 
 ```shell script
