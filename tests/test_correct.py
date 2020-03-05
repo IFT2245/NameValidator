@@ -5,11 +5,11 @@ from validate import extract_students
 class TestCorrect(unittest.TestCase):
 
     def test_correct_len(self):
-        names = extract_students("correct_file.c")
+        names = extract_students("./tests/correct_file.c")
         self.assertEqual(2, len(names))
 
     def test_correct_names(self):
-        names = extract_students("correct_file.c")
+        names = extract_students("./tests/correct_file.c")
 
         name_one = names[0]
         name_two = names[1]
@@ -23,7 +23,7 @@ class TestCorrect(unittest.TestCase):
         self.assertEqual(name_two[2], "11110000")
 
     def test_long_comment(self):
-        names = extract_students("long_comment_style_correct.c")
+        names = extract_students("./tests/long_comment_style_correct.c")
 
         self.assertEqual(len(names), 2)
 
