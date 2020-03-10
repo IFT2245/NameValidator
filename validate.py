@@ -13,14 +13,19 @@ def is_up_to_date():
     Check if the script is up to date
     :return: if the script is... up to date!
     """
-    with rq.get("https://raw.githubusercontent.com/SamuelYvon/NameValidator/master/validate.py") as version_check_req:
-        raw = version_check_req.text
-        version = re.search(r"VERSION = (\d+.\d+)", raw, flags=re.M)
-        if version is None:
-            print("Erreur en exécutant le script! Veuillez ouvrir un bug sur github!")
-        else:
-            online_version = float(version[1])
-            return online_version == VERSION
+    try:
+        with rq.get(
+                "https://raw.githubusercontent.com/SamuelYvon/NameValidator/master/validate.py") as version_check_req:
+            raw = version_check_req.text
+            version = re.search(r"VERSION = (\d+.\d+)", raw, flags=re.M)
+            if version is None:
+                print("Erreur en exécutant le script! Veuillez ouvrir un bug sur github!")
+            else:
+                online_version = float(version[1])
+                return online_version == VERSION
+    except rq.ConnectionError:
+        print("Impossible de vérifier la version du script. En cas d'erreur, assurez-vous d'avoir la dernière version.")
+        return True  # should still work
 
 
 def extract_students(file: str):
