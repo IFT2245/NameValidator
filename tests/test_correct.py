@@ -66,12 +66,18 @@ class TestCorrect(unittest.TestCase):
 
         # the re library doesn't allow repeated group
         self.assertEqual(name_one[0], "author")
-        self.assertEqual(name_one[1], "tres")
-        self.assertEqual(name_one[2], "11112222")
+        self.assertEqual(name_one[1], "one")
+        self.assertEqual(name_one[2], "uno")
+        self.assertEqual(name_one[3], "dos")
+        self.assertEqual(name_one[4], "tres")
+        self.assertEqual(name_one[5], "11112222")
 
         self.assertEqual(name_two[0], "author")
-        self.assertEqual(name_two[1], "seis")
-        self.assertEqual(name_two[2], "33331111")
+        self.assertEqual(name_two[1], "two")
+        self.assertEqual(name_two[2], "quatro")
+        self.assertEqual(name_two[3], "cinco")
+        self.assertEqual(name_two[4], "seis")
+        self.assertEqual(name_two[5], "33331111")
 
     def test_accents(self):
         # *author
