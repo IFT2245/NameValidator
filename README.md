@@ -1,4 +1,4 @@
-# NameValidator ![Build status](https://travis-ci.org/SamuelYvon/NameValidator.svg?branch=master)
+# NameValidator ![Build status](https://travis-ci.org/IFT2245/NameValidator.svg?branch=master)
 
 Validation de l'entête de votre fichier.
 
@@ -9,7 +9,7 @@ Normalement, `python3` est installé si vous utilisez Linux (par défaut, peut-�
 Par la suite:
 
 ```shell-script
-> wget https://github.com/SamuelYvon/NameValidator/blob/master/validate.py # télécharge le script
+> wget https://raw.githubusercontent.com/IFT2245/NameValidator/master/validate.py # télécharge le script
 > chmod u+x # donne les permissions d'exécution au script
 > ./validate.py [votre fichier .c] # valide le fichier c
 ...
@@ -17,7 +17,7 @@ Par la suite:
 
 Si votre installation ne contient pas la librairie `requests`:
 ```shell script
-> wget https://github.com/SamuelYvon/NameValidator/blob/master/requirements.txt # télécharge le script
+> wget wget https://raw.githubusercontent.com/NameValidator/blob/master/requirements.txt # télécharge le script
 > pip3 install -r requirements.txt
 ```
 
