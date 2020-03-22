@@ -17,7 +17,7 @@ Par la suite:
 
 Si votre installation ne contient pas la librairie `requests`:
 ```shell script
-> wget wget https://raw.githubusercontent.com/NameValidator/blob/master/requirements.txt # télécharge le script
+> wget https://raw.githubusercontent.com/NameValidator/blob/master/requirements.txt # télécharge le script
 > pip3 install -r requirements.txt
 ```
 
