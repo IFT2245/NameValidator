@@ -15,7 +15,7 @@ def is_up_to_date():
     """
     try:
         with rq.get(
-                "https://raw.githubusercontent.com/SamuelYvon/IFT2245/master/validate.py") as version_check_req:
+                "https://raw.githubusercontent.com/IFT2245/NameValidator/master/validate.py") as version_check_req:
             raw = version_check_req.text
             version = re.search(r"VERSION = (\d+.\d+)", raw, flags=re.M)
             if version is None:
