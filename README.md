@@ -1,4 +1,4 @@
-# NameValidator ![Build status](https://travis-ci.org/SamuelYvon/NameValidator.svg?branch=master)
+# NameValidator ![Build status](https://travis-ci.org/IFT2245/NameValidator.svg?branch=master)
 
 Validation de l'entête de votre fichier.
 
